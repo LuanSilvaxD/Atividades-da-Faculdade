@@ -1,0 +1,33 @@
+# ATIVIDADE DA "SOU DEV" LOGICA E MATEMATICA COMPUTACIONAL
+
+
+
+def calcular_juros(total, dia_pagamento):
+                                     # Função para calcular os juros com base no valor total e no dia do pagamento
+    if dia_pagamento <= 25:
+        return 0                    # Sem juros se o pagamento for até o dia 25
+    else:
+        dias_atraso = dia_pagamento - 25                               # Calcula os dias de atraso
+        juros = 0.03 * total + 0.01 * total * dias_atraso              # Calcula os juros
+        return juros
+
+def main():
+    total_compras = 0
+    while True:
+        valor = float(input("Digite o valor da compra: R$"))
+        total_compras += valor                                         # Adiciona o valor da compra ao total
+        ultima_compra = input("Esta é a última compra? (s/n): ").lower()
+        if ultima_compra == 's':
+            break                      # Sai do loop se for a última compra
+    
+    dia_pagamento = int(input("Digite o dia do pagamento da fatura: "))
+    juros = calcular_juros(total_compras, dia_pagamento)               # Calcula os juros
+    total_fatura = total_compras + juros                               # Calcula o total da fatura com juros
+    
+                # Exibe os valores calculados
+    print(f"Total das compras: R$ {total_compras:.2f}")
+    print(f"Juros aplicados: R$ {juros:.2f}")
+    print(f"Total da fatura: R$ {total_fatura:.2f}")
+
+if __name__ == "__main__":
+    main()                                                             # Executa o programa principal
