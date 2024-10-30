@@ -5,7 +5,7 @@ Além do cálculo proposto foi implementado uma interface gráfica interativa pa
 
 **Explicação:**
 
-Irei apresentar um projeto desenvolvido em Python que implementa uma calculadora de juros com uma interface gráfica utilizando Tkinter. Este projeto foi criado para facilitar o cálculo de juros para compras realizadas fora do prazo de pagamento.
+Irei apresentar um projeto desenvolvido em Python onde foi uma calculadora de juros com uma interface gráfica utilizando Tkinter. Este projeto foi criado para facilitar o cálculo de juros para compras realizadas fora do prazo de pagamento.
 
 **Funcionalidades Principais**
 
