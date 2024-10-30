@@ -1,3 +1,6 @@
+Atividade proposta pela professora Maiara sacramento da faculdade Anhanguera do curso de Análise e desenvolvimento de sistemas com o objetivo de criar uma [continuação]
+  
+  
   Explicação dos codigos
 
   Função "calcular_juros":
