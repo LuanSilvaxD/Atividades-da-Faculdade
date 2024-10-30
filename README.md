@@ -2,9 +2,10 @@
 Atividade proposta pela professora Maiara sacramento da faculdade Anhanguera do curso de Análise e desenvolvimento de sistemas 2° Semestre com o objetivo de criar uma calculadora de simulação de juros da disciplina Lógica e matemática computacional.
    
 Além do cálculo proposto foi implementado uma interface gráfica interativa para facilitar e melhorar a visibilidade.
-  **Explicação:**
 
-Hoje, vou apresentar um projeto desenvolvido em Python que implementa uma calculadora de juros com uma interface gráfica utilizando Tkinter. Este projeto foi criado para facilitar o cálculo de juros para compras realizadas fora do prazo de pagamento.
+**Explicação:**
+
+Irei apresentar um projeto desenvolvido em Python que implementa uma calculadora de juros com uma interface gráfica utilizando Tkinter. Este projeto foi criado para facilitar o cálculo de juros para compras realizadas fora do prazo de pagamento.
 
 **Funcionalidades Principais**
 
