@@ -1,33 +1,90 @@
 # ATIVIDADE DA "SOU DEV" LOGICA E MATEMATICA COMPUTACIONAL
 
 
+import tkinter as tk
+from tkinter import messagebox
+
 
 def calcular_juros(total, dia_pagamento):
-                                     # Função para calcular os juros com base no valor total e no dia do pagamento
+    """Função para calcular os juros com base no valor total e no dia do pagamento"""
     if dia_pagamento <= 25:
-        return 0                    # Sem juros se o pagamento for até o dia 25
+        return 0  # Sem juros se o pagamento for até o dia 25
     else:
-        dias_atraso = dia_pagamento - 25                               # Calcula os dias de atraso
-        juros = 0.03 * total + 0.01 * total * dias_atraso              # Calcula os juros
+        dias_atraso = dia_pagamento - 25  # Calcula os dias de atraso
+        juros = 0.03 * total + 0.01 * total * dias_atraso  # Calcula os juros
         return juros
+# função de adicionar compra com caixa de erro caso seja inserido um valor válido:
+def adicionar_compra():
+    try:
+        valor = float(entry_valor.get())
+        global total_compras
+        total_compras += valor
+        label_total_compras.config(text=f"Valor total das compras: R$ {total_compras:.2f}")
+        entry_valor.delete(0, tk.END)
+    except ValueError:
+        messagebox.showerror("Erro", "Por favor, insira um valor válido.")
 
-def main():
+# Função de cálculo da fatura com juros:
+def calcular_fatura():
+    try:
+        dia_pagamento = int(entry_dia_pagamento.get())
+        juros = calcular_juros(total_compras, dia_pagamento)
+        total_fatura = total_compras + juros
+        label_juros.config(text=f"Juros aplicados: R$ {juros:.2f}")
+        label_total_fatura.config(text=f"Total da fatura: R$ {total_fatura:.2f}")
+    except ValueError:
+        messagebox.showerror("Erro", "Por favor, insira um dia de pagamento válido.")
+
+# Função para adicionar um botão a janela com o objetivo de limpar o texto inserido:
+def limpar():
+    global total_compras
     total_compras = 0
-    while True:
-        valor = float(input("Digite o valor da compra: R$"))
-        total_compras += valor                                         # Adiciona o valor da compra ao total
-        ultima_compra = input("Esta é a última compra? (s/n): ").lower()
-        if ultima_compra == 's':
-            break                      # Sai do loop se for a última compra
-    
-    dia_pagamento = int(input("Digite o dia do pagamento da fatura: "))
-    juros = calcular_juros(total_compras, dia_pagamento)               # Calcula os juros
-    total_fatura = total_compras + juros                               # Calcula o total da fatura com juros
-    
-                # Exibe os valores calculados
-    print(f"Total das compras: R$ {total_compras:.2f}")
-    print(f"Juros aplicados: R$ {juros:.2f}")
-    print(f"Total da fatura: R$ {total_fatura:.2f}")
+    entry_valor.delete(0, tk.END)
+    entry_dia_pagamento.delete(0, tk.END)
+    label_total_compras.config(text="Valor total das compras: R$ 0.00")
+    label_juros.config(text="Juros aplicados: R$ 0.00")
+    label_total_fatura.config(text="Total da fatura: R$ 0.00")
 
-if __name__ == "__main__":
-    main()                                                             # Executa o programa principal
+# Inicializando a janela principal
+root = tk.Tk()
+root.title("Calculadora de Juros")
+
+# Layout da interface gráfica
+label_instrucao = tk.Label(root, text="Digite o valor da compra:")
+label_instrucao.pack()
+
+entry_valor = tk.Entry(root)
+entry_valor.pack()
+
+button_adicionar = tk.Button(root, text="Adicionar", command=adicionar_compra)
+button_adicionar.pack()
+
+label_total_compras = tk.Label(root, text="Valor total das compras: R$ 0.00")
+label_total_compras.pack()
+
+label_dia_pagamento = tk.Label(root, text="Digite o dia do pagamento da fatura:")
+label_dia_pagamento.pack()
+
+entry_dia_pagamento = tk.Entry(root)
+entry_dia_pagamento.pack()
+
+button_calcular = tk.Button(root, text="Calcular Juros", command=calcular_fatura)
+button_calcular.pack()
+
+button_limpar = tk.Button(root, text="Limpar", command=limpar)
+button_limpar.pack()
+
+label_juros = tk.Label(root, text="Juros aplicados: R$ 0.00")
+label_juros.pack()
+
+label_total_fatura = tk.Label(root, text="Total da fatura: R$ 0.00")
+label_total_fatura.pack()
+
+# Botão de sair da janela
+button_sair = tk.Button(root, text="Sair", command=root.quit)
+button_sair.pack()
+
+total_compras = 0
+
+# Executando a aplicação
+root.mainloop()
