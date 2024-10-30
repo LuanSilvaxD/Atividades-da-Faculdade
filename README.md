@@ -1,44 +1,44 @@
-Atividade "Sou DEV" proposta pela professora Maiara sacramento da faculdade Anhanguera do curso de Análise e desenvolvimento de sistemas com o objetivo de criar uma calculadora de simulação de juros da disciplina []
+**Atividade "Sou DEV"**
+Atividade proposta pela professora Maiara sacramento da faculdade Anhanguera do curso de Análise e desenvolvimento de sistemas 2° Semestre com o objetivo de criar uma calculadora de simulação de juros da disciplina Lógica e matemática computacional.
    
 
-  Explicação dos codigos
+  **Explicação:**
 
-  Função "calcular_juros":
+Hoje, vou apresentar um projeto desenvolvido em Python que implementa uma calculadora de juros com uma interface gráfica utilizando Tkinter. Este projeto foi criado para facilitar o cálculo de juros para compras realizadas fora do prazo de pagamento.
 
-Objetivo: Calcular os juros com base no dia de pagamento.
+**Funcionalidades Principais**
 
-  Parâmetros:
+1. Adição de Compras:
+   - Usuário pode inserir os valores das compras realizadas.
+   - Sistema acumula o valor total das compras.
+   
+2. Cálculo de Juros:
+   - Usuário insere o dia do pagamento.
+   - Se o pagamento for feito após o dia 25, juros são calculados com base na taxa fixa de 3% mais 1% por dia de atraso.
+   
+3. Interface Gráfica:
+   - Desenvolvida utilizando a biblioteca Tkinter.
+   - Interface amigável e fácil de usar com campos de entrada e botões para interação.
 
-total: o valor total das compras.
+**Função dos Códigos**
 
-dia_pagamento: o dia em que a fatura foi paga.
-
-  Lógica:
-
-Se o pagamento for até o dia 25, não há juros (return 0).
-
-Caso contrário, calcula os dias de atraso (dias_atraso) e aplica os juros: 3% sobre o total mais 1% por dia de atraso.
+Função para Calcular Juros:
+A função `calcular_juros` recebe o valor total das compras e o dia do pagamento, retornando o valor dos juros aplicados.
 
 
-  Função " main":
-  Explicação:
+Funções de Interação com a Interface Gráfica
+1. Adicionar Compras:
+   - Adiciona o valor digitado ao total de compras e exibe o total atualizado.
+   
+2. Calcular Fatura:
+   - Calcula os juros com base no dia do pagamento e exibe os valores de juros e total da fatura.
+   
+3. Limpar Dados:
+   - Reseta todos os campos e valores para iniciar um novo cálculo.
+  
+**Este projeto demonstra como utilizar Python e a biblioteca Tkinter para desenvolver uma aplicação simples, mas funcional. A calculadora de juros pode ser facilmente expandida para incluir mais funcionalidades, conforme necessário.**
 
-Objetivo: Principal função do programa que coleta os dados das compras, calcula os juros e exibe o total da fatura.
+**Obrigado pela atenção e estou à disposição para perguntas!**
 
-  Processo:
 
-Inicializa total_compras com zero.
 
-  Loop While:
-
-Solicita o valor da compra e adiciona ao total.
-
-Pergunta se é a última compra. Se sim ('s'), sai do loop.
-
-Solicita o dia do pagamento da fatura.
-
-Chama a função calcular_juros para obter os juros aplicáveis.
-
-Calcula o total da fatura somando as compras e os juros.
-
-Exibe o total das compras, os juros aplicados e o total da fatura.
