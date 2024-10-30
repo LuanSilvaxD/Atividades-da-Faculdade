@@ -1,6 +1,5 @@
-Atividade proposta pela professora Maiara sacramento da faculdade Anhanguera do curso de Análise e desenvolvimento de sistemas com o objetivo de criar uma calculadora de simulação de juros.
-  
-  # ATIVIDADE "SOU DEV" DA DISCIPLINA LOGICA E MATEMATICA COMPUTACIONAL
+Atividade "Sou DEV" proposta pela professora Maiara sacramento da faculdade Anhanguera do curso de Análise e desenvolvimento de sistemas com o objetivo de criar uma calculadora de simulação de juros da disciplina []
+   
 
   Explicação dos codigos
 
